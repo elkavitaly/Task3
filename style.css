@@ -30,7 +30,6 @@ header {
 	margin: 10px auto 0 auto;
 	width: 80%;
 	display: flex;
-	flex-wrap: wrap;
 }
 
 .product-block {

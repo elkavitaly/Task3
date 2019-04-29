@@ -33,9 +33,8 @@ var arr = [{ratingRevievs: "264 отзыва", price: {oldUan: "4 333 грн",
 
 arr.sort(function(a, b){
 	let ap = a.price.newUan !== undefined ? parseInt(a.price.newUan.substring(0, a.price.newUan.length - 4).replace(/\s/g, ""), 10) : parseInt(a.price.substring(0, a.price.length - 4).replace(/\s/g, ""), 10);
-	let bp = b.price.newUan !== undefined ? parseInt(b.price.newUan.substring(0, b.price.newUan.length - 4).replace(/\s/g, ""), 10) : parseInt(b.price.substring(0, b.price.length - 4).replace(/\s/g, ""), 10)
-	let r = parseInt(ap) - parseInt(bp);
-	return r;
+	let bp = b.price.newUan !== undefined ? parseInt(b.price.newUan.substring(0, b.price.newUan.length - 4).replace(/\s/g, ""), 10) : parseInt(b.price.substring(0, b.price.length - 4).replace(/\s/g, ""), 10);
+	return ap - bp;
 });
 
 let len = Math.ceil(arr.length / 4);
@@ -79,7 +78,6 @@ for(let i = 0; i < len; i++){
 		name.appendChild(textNodeName);
 		product.appendChild(name);
 		
-
 		if(arr[index].price.newUan !== undefined){
 			let newPrice = document.createElement("p");
 			newPrice.className = "newPrice";
